@@ -10,6 +10,11 @@
 
 @implementation BNRItem
 
+- (void) dealloc
+{
+    NSLog(@"Destroyed: %@", self);
+}
+
 - (id) initWithItemName:(NSString *)name valueInDollars:(int)value serialNumber:(NSString *)sNumber
 {
     //call the superclass's designated initializer
@@ -27,6 +32,31 @@
     return self;
     
 }
+
+- (void) setContainedItem:(BNRItem *)i
+{
+    containedItem = i;
+    
+    // when gvben an item to contain, the contained item will be given a pointer to its container
+    [i setContainer:self];
+}
+
+//- (BNRItem *) containedItem
+//{
+//    return containedItem;
+//}
+
+//- (void) setContainer: (BNRItem *) i
+//{
+//    container = i;
+//}
+
+//- (BNRItem *) container
+//{
+//    return container;
+//}
+
+
 + (id) randomItem
 {
     //Create an array of three adjectives
@@ -77,40 +107,43 @@
     
 }
 
-- (void) setItemName:(NSString *)str
-{
-    itemName = str;
-}
+//- (void) setItemName:(NSString *)str
+//{
+//    itemName = str;
+//}
 
-- (NSString *) itemName
-{
-    return itemName;
-}
+//- (NSString *) itemName
+//{
+//    return itemName;
+//}
 
-- (void) setSerialNumber:(NSString *)str
-{
-    serialNumber = str;
-}
+@synthesize itemName;
+@synthesize containedItem, container, serialNumber, valueInDollars, dateCreated;
 
-- (NSString *) serialNumber
-{
-    return serialNumber;
-}
+//- (void) setSerialNumber:(NSString *)str
+//{
+//    serialNumber = str;
+//}
 
-- (void) setValueInDollars:(int)i
-{
-    valueInDollars = i;
-}
+//- (NSString *) serialNumber
+//{
+//    return serialNumber;
+//}
 
-- (int) valueInDollars
-{
-    return valueInDollars;
-}
+//- (void) setValueInDollars:(int)i
+//{
+//    valueInDollars = i;
+//}
 
-- (NSDate *) dateCreated
-{
-    return dateCreated;
-}
+//- (int) valueInDollars
+//{
+//    return valueInDollars;
+//}
+
+//- (NSDate *) dateCreated
+//{
+//    return dateCreated;
+//}
 
 - (NSString *) description
 {
