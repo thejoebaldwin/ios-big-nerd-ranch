@@ -14,20 +14,51 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    CGRect viewFrame = CGRectMake(160, 240, 100, 150);
+    //Override point for customization after application launch.
+    //CGRect viewFrame = CGRectMake(160, 240, 100, 150);
     
-    HypnosisView *view = [[HypnosisView alloc] initWithFrame:viewFrame];
-    [view setBackgroundColor:[UIColor redColor]];
-    [[self window] addSubview:view];
+    CGRect screenRect = [[self window] bounds];
+    
+    // Create the UIScrollView to have the size of the window, matching its size
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [[self window] addSubview:scrollView];
+    
+
+    //HypnosisView *view = [[HypnosisView alloc] initWithFrame:viewFrame];
+    //HypnosisView *view = [[HypnosisView alloc] initWithFrame:[[self window] bounds]];
+    //[view setBackgroundColor:[UIColor redColor]];
     
     
-    CGRect anotherFrame = CGRectMake(20, 30, 50, 50);
-    HypnosisView *anotherView = [[HypnosisView alloc] initWithFrame:anotherFrame];
-    [anotherView setBackgroundColor:[UIColor blueColor]];
+    //Create the hypnosisView with a frame that is twice the size of the screen
+    CGRect bigRect = screenRect;
+    bigRect.size.width *= 2.0;
+    bigRect.size.height *= 2.0;
+    HypnosisView *view = [[HypnosisView alloc] initWithFrame:bigRect];
+    
+    //[[self window] addSubview:view];
+    // Add the HypnosisView as a subview of the scrollView instead of the window
+    [scrollView addSubview:view];
+    
+
+    
+    // tell the scrollView how big big its virtual world is
+    [scrollView setContentSize:bigRect.size];
+    
+    
+    BOOL success = [view becomeFirstResponder];
+    if (success) {
+        NSLog(@"HypnosisView became the first responder");
+    } else {
+        NSLog(@"Could not become first responder");
+    }
+    
+    //CGRect anotherFrame = CGRectMake(20, 30, 50, 50);
+    //HypnosisView *anotherView = [[HypnosisView alloc] initWithFrame:anotherFrame];
+        
+    //[anotherView setBackgroundColor:[UIColor blueColor]];
     
     //[[self window] addSubview:anotherView];
-    [view addSubview:anotherView];
+    //[view addSubview:anotherView];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
