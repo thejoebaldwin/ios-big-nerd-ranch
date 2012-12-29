@@ -281,6 +281,7 @@
 				9743162F168DF2F50005FBA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
