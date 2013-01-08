@@ -13,6 +13,7 @@
 		3F895CDF16948BF000308D8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F895CDD16948BF000308D8E /* InfoPlist.strings */; };
 		3F895CE116948BF000308D8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F895CE016948BF000308D8E /* main.m */; };
 		3F895CE516948BF000308D8E /* HomepwnerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F895CE416948BF000308D8E /* HomepwnerAppDelegate.m */; };
+		975EA945169BD96C00B3D089 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975EA944169BD96C00B3D089 /* HeaderView.xib */; };
 		D89589CD169B4BF600586BD1 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D89589CC169B4BF600586BD1 /* ItemsViewController.m */; };
 		D89589D2169B539B00586BD1 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D89589D1169B539B00586BD1 /* BNRItemStore.m */; };
 		D89589D9169B62A000586BD1 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D89589D8169B629F00586BD1 /* BNRItem.m */; };
@@ -29,6 +30,7 @@
 		3F895CE216948BF000308D8E /* Homepwner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Homepwner-Prefix.pch"; sourceTree = "<group>"; };
 		3F895CE316948BF000308D8E /* HomepwnerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomepwnerAppDelegate.h; sourceTree = "<group>"; };
 		3F895CE416948BF000308D8E /* HomepwnerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerAppDelegate.m; sourceTree = "<group>"; };
+		975EA944169BD96C00B3D089 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		D89589CB169B4BF600586BD1 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsViewController.h; path = ../ItemsViewController.h; sourceTree = "<group>"; };
 		D89589CC169B4BF600586BD1 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsViewController.m; path = ../ItemsViewController.m; sourceTree = "<group>"; };
 		D89589D0169B539B00586BD1 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				D89589D7169B629F00586BD1 /* BNRItem.h */,
 				D89589D8169B629F00586BD1 /* BNRItem.m */,
 				D89589CB169B4BF600586BD1 /* ItemsViewController.h */,
+				975EA944169BD96C00B3D089 /* HeaderView.xib */,
 				D89589CC169B4BF600586BD1 /* ItemsViewController.m */,
 				3F895CE316948BF000308D8E /* HomepwnerAppDelegate.h */,
 				3F895CE416948BF000308D8E /* HomepwnerAppDelegate.m */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F895CDF16948BF000308D8E /* InfoPlist.strings in Resources */,
+				975EA945169BD96C00B3D089 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

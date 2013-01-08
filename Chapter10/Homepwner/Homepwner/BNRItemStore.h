@@ -15,8 +15,12 @@
     NSMutableArray *allItems;
 }
 
+- (void)moveItemAtIndex:(int) from toIndex:(int) to;
+
 // Notice that this is a class method and prefixed weith a + instead of a -
 + (BNRItemStore *)sharedStore;
+
+- (void) removeItem:(BNRItem *)p;
 
 - (NSArray *)allItems;
 - (BNRItem *)createItem;

@@ -11,6 +11,27 @@
 
 @implementation BNRItemStore
 
+- (void) moveItemAtIndex:(int)from toIndex:(int)to
+{
+    if (from == to) {
+        return;
+    }
+    
+    // Get pointer to object being moved so we can re-insert it
+    BNRItem *p = [allItems objectAtIndex:from];
+    
+    // Remove p from array
+    [allItems removeObjectAtIndex:from];
+    
+    // Inser p in array at new location
+    [allItems insertObject:p atIndex:to];
+}
+
+- (void) removeItem:(BNRItem *)p
+{
+    [allItems removeObjectIdenticalTo:p];
+}
+
 - (BNRItem *) createItem
 {
     BNRItem *p = [BNRItem randomItem];
