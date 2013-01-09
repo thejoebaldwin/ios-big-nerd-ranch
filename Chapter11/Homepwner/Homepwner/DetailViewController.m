@@ -13,6 +13,26 @@
 
 @synthesize item;
 
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // Clear first responder
+    [[ self view] endEditing:YES];
+    
+    // "Save" changed to item
+    [item setItemName:[nameField text]];
+    [item setSerialNumber:[serialNumberField text]];
+    [item setValueInDollars:[[valueField text] intValue]];
+}
+
+- (void) setItem:(BNRItem *) i
+{
+    item = i;
+    [[self navigationItem] setTitle:[item itemName]];
+}
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -28,6 +48,8 @@
     
     // Use a filtered NSDarte object to set dateLabel contents
     [dateLabel setText:[dateFormatter stringFromDate:[item dateCreated]]];
+    
+    
     
 }
 

@@ -13,6 +13,12 @@
 @implementation ItemsViewController
 
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
+}
+
 - (void) tableView:(UITableView *) aTableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -87,10 +93,13 @@
     }
 }
 
-- (UIView *) tableView:(UITableView *) tv viewForHeaderInSection:(NSInteger)sec
-{
-    return [self headerView];
-}
+
+
+// Commented out because "Real" buttons now in header
+//- (UIView *) tableView:(UITableView *) tv viewForHeaderInSection:(NSInteger)sec
+//{
+//    return [self headerView];
+//}
 
 - (CGFloat) tableView:(UITableView *) tv heightForHeaderInSection:(NSInteger)sec
 {
@@ -146,7 +155,27 @@
         //for (int i = 0; i < 5; i++) {
         //    [[BNRItemStore sharedStore] createItem];
         //}
+        UINavigationItem *n = [self navigationItem];
+        
+        [n setTitle:@"Homepwner"];
+        
+        // Create a new bar button item as the right item in the navigationItem
+        // addNewItem: to ItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                         target:self
+                                                                             action:@selector(addNewItem:)];
+                            
+        //Set this bar button item as the right item in the navigationItem
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
+
     }
+    
+    return self;
+
+    
+    
     return self;
 }
 
