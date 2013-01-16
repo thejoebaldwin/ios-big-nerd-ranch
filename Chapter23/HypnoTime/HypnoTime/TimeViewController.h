@@ -14,5 +14,5 @@
     
 }
 - (IBAction) showCurrentTime:(id) sender;
-
+- (void) spinTimeLabel;
 @end

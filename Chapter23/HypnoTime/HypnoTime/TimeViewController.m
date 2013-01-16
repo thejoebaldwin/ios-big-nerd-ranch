@@ -8,7 +8,22 @@
 
 #import "TimeViewController.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @implementation TimeViewController
+
+- (void) spinTimeLabel
+{
+    // Creat a basic animation
+    CABasicAnimation *spin = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    
+    // fromValue is implied
+    [spin setToValue:[NSNumber numberWithFloat:M_PI * 2.0]];
+    [spin setDuration:1.0];
+
+    // Kick off the animation by adding it to the layer
+    [[timeLabel layer] addAnimation:spin forKey:@"spinAnimation"];
+}
 
 
 - (void) viewWillAppear:(BOOL)animated
@@ -85,6 +100,8 @@
     [formatter setTimeStyle:NSDateFormatterMediumStyle];
     
     [timeLabel setText:[formatter stringFromDate:now]];
+    
+    [self spinTimeLabel];
     
 }
 
